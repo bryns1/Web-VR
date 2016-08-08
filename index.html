@@ -26,7 +26,6 @@
     <script src="./js/DeviceOrientationControls.js"></script>
     <script src="./js/OrbitControls.js"></script>
     <script src="./js/helvetiker_regular.typeface.js"></script>
-    <script src="https://timezonedb.googlecode.com/files/timezonedb.js" type="text/javascript"></script>
 
     <script>
       var scene,
@@ -46,14 +45,6 @@
           particleRotationDeg = 0,
           lastColorRange = [0, 0.3],
           currentColorRange = [0, 0.3],
-
-          // City and weather API set up
-          cities = [['Sydney', '2147714'], ['New York', '5128638'], ['Tokyo', '1850147'], ['London', '2643743'], ['Mexico City', '3530597'], ['Miami', '4164138'], ['San Francisco', '5391959'], ['Rome', '3169070']],
-          cityWeather = {},
-          cityTimes = [],
-          currentCity = 0,
-          currentCityText = new THREE.TextGeometry(),
-          currentCityTextMesh = new THREE.Mesh();
 
       init();
 
@@ -145,99 +136,10 @@
         particles.position.y = 70;
         scene.add(particles);
 
-        adjustToWeatherConditions();
 
         clock = new THREE.Clock();
 
         animate();
-      }
-
-      function adjustToWeatherConditions() {
-        var cityIDs = '';
-        for (var i = 0; i < cities.length; i++) {
-          cityIDs += cities[i][1];
-          if (i != cities.length - 1) cityIDs += ',';
-        }
-        getURL('http://api.openweathermap.org/data/2.5/group?id=' + cityIDs + '&APPID=b5c0b505a8746a1b2cc6b17cdab34535', function(info) {
-          cityWeather = info.list;
-          
-          lookupTimezones(0, cityWeather.length);
-        });
-      }
-
-      function lookupTimezones(t, len) {
-        var tz = new TimeZoneDB;
-        
-        tz.getJSON({
-            key: "GPH4A5Q6NGI1",
-            lat: cityWeather[t].coord.lat,
-            lng: cityWeather[t].coord.lon
-        }, function(timeZone){
-            cityTimes.push(new Date(timeZone.timestamp * 1000));
-
-            t++;
-
-            if (t < len) {
-              setTimeout(function() {
-                lookupTimezones(t, len);
-              }, 1200);
-            } else {
-              applyWeatherConditions();
-            }
-        });
-      }
-
-      function applyWeatherConditions() {
-        displayCurrentCityName(cities[currentCity][0]);
-
-        var info = cityWeather[currentCity];
-
-        particleRotationSpeed = info.wind.speed / 2; // dividing by 2 just to slow things down 
-        particleRotationDeg = info.wind.deg;
-
-        var timeThere = cityTimes[currentCity] ? cityTimes[currentCity].getUTCHours() : 0,
-            isDay = timeThere >= 6 && timeThere <= 18;
-
-        if (isDay) {
-          switch (info.weather[0].main) {
-            case 'Clouds':
-              currentColorRange = [0, 0.01];
-              break;
-            case 'Rain':
-              currentColorRange = [0.7, 0.1];
-              break;
-            case 'Clear':
-            default:
-              currentColorRange = [0.6, 0.7];
-              break;
-          }
-        } else {
-          currentColorRange = [0.69, 0.6];
-        }
-
-        if (currentCity < cities.length-1) currentCity++;
-        else currentCity = 0;
-
-        setTimeout(applyWeatherConditions, 5000);
-      }
-
-      function displayCurrentCityName(name) {
-        scene.remove(currentCityTextMesh);
-
-        currentCityText = new THREE.TextGeometry(name, {
-          size: 4,
-          height: 1
-        });
-        currentCityTextMesh = new THREE.Mesh(currentCityText, new THREE.MeshBasicMaterial({
-          color: 0xffffff, opacity: 1
-        }));
-
-        currentCityTextMesh.position.y = 10;
-        currentCityTextMesh.position.z = 20;
-        currentCityTextMesh.rotation.x = 0;
-        currentCityTextMesh.rotation.y = -180;
-
-        scene.add(currentCityTextMesh);
       }
 
       function animate() {
@@ -245,16 +147,6 @@
             particleRotationDirection = particleRotationDeg <= 180 ? -1 : 1;
 
         particles.rotation.y = elapsedSeconds * particleRotationSpeed * particleRotationDirection;
-        
-        // We check if the color range has changed, if so, we'll change the colours
-        if (lastColorRange[0] != currentColorRange[0] && lastColorRange[1] != currentColorRange[1]) {
-
-          for (var i = 0; i < totalParticles; i++) {
-            particles.children[i].material.color.setHSL(currentColorRange[0], currentColorRange[1], (Math.random() * (0.7 - 0.2) + 0.2));
-          }
-
-          lastColorRange = currentColorRange;
-        }
 
         requestAnimationFrame(animate);
 
@@ -295,24 +187,6 @@
         } else if (container.webkitRequestFullscreen) {
           container.webkitRequestFullscreen();
         }
-      }
-
-      function getURL(url, callback) {
-        var xmlhttp = new XMLHttpRequest();
-
-        xmlhttp.onreadystatechange = function() {
-          if (xmlhttp.readyState == 4) {
-             if (xmlhttp.status == 200){
-                 callback(JSON.parse(xmlhttp.responseText));
-             }
-             else {
-                 console.log('We had an error, status code: ', xmlhttp.status);
-             }
-          }
-        }
-
-        xmlhttp.open('GET', url, true);
-        xmlhttp.send();
       }
     </script>
   </body>
