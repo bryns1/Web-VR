@@ -125,6 +125,7 @@
 
         var wall = new THREE.Mesh(geometry, wallMaterial);
         wall.position.z = 1000;
+        wall.position.x = 1000;
         scene.add(wall);
 
         var particleTexture = THREE.ImageUtils.loadTexture('textures/particle.png'),
@@ -158,6 +159,7 @@
             particleRotationDirection = particleRotationDeg <= 180 ? -1 : 1;
 
         particles.rotation.y = elapsedSeconds * particleRotationSpeed * particleRotationDirection;
+        particles.rotation.x = elapsedSeconds * particleRotationSpeed * particleRotationDirection;
 
         requestAnimationFrame(animate);
 
