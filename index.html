@@ -88,9 +88,6 @@
         window.addEventListener('deviceorientation', setOrientationControls, true);
 
         // Lighting
-        var light = new THREE.PointLight(0x999999, 2, 100);
-        light.position.set(50, 50, 50);
-        scene.add(light);
 
         var lightScene = new THREE.PointLight(0x999999, 2, 100);
         lightScene.position.set(0, 5, 0);
@@ -116,6 +113,8 @@
         floor.rotation.x = -Math.PI / 2;
         scene.add(floor);
 
+        var wall = new THREE.Mesg(geometry, floorMaterial);
+        scene.add(wall);
         var particleTexture = THREE.ImageUtils.loadTexture('textures/particle.png'),
             spriteMaterial = new THREE.SpriteMaterial({
             map: particleTexture,
