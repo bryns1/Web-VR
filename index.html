@@ -99,8 +99,8 @@
         floorTexture.repeat = new THREE.Vector2(50, 50);
         floorTexture.anisotropy = renderer.getMaxAnisotropy();
 
-        var wallTexture = THREE.ImageUtils.loadTexture('textures/texture.jpg');
-        wallTexture.anisotropy = renderer.getMaxAnisotropy();
+        /*var wallTexture = THREE.ImageUtils.loadTexture('textures/texture.jpg');
+        wallTexture.anisotropy = renderer.getMaxAnisotropy();*/
 
         var floorMaterial = new THREE.MeshPhongMaterial({
           color: 0xffffff,
@@ -114,17 +114,22 @@
           color: 0xD60000,
           specular: 0xD60000,
           shininess: 20,
-          shading: THREE.FlatShading,
-          map: wallTexture
+          shading: THREE.FlatShading
+          /*map: wallTexture*/
         });
 
         var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
+
+        var l1 = new THREE.ImageLoader();
+        l1.setCrossOrigin('Anonymous');
+
 
         var floor = new THREE.Mesh(geometry, floorMaterial);
         floor.rotation.x = -Math.PI / 2;
         scene.add(floor);
 
         var wall = new THREE.Mesh(geometry, floorMaterial);
+        wall.setImage(l1.load('textures/texture.jpg'))
         scene.add(wall);
 
         var particleTexture = THREE.ImageUtils.loadTexture('textures/particle.png'),
