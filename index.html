@@ -128,30 +128,9 @@
         wall.position.x = 1000;
         scene.add(wall);
 
-        var particleTexture = THREE.ImageUtils.loadTexture('textures/particle.png'),
-            spriteMaterial = new THREE.SpriteMaterial({
-            map: particleTexture,
-            color: 0xffffff
-          });
-
-
             var light = new THREE.AmbientLight( 0x404040 ); // soft white light
 scene.add( light );
-        for (var i = 0; i < totalParticles; i++) {
-          var sprite = new THREE.Sprite(spriteMaterial);
-
-          sprite.scale.set(64, 64, 1.0);
-          sprite.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.75);
-          sprite.position.setLength(maxParticleSize * Math.random());
-
-          sprite.material.blending = THREE.AdditiveBlending;
-          
-          particles.add(sprite);
-        }
-        particles.position.y = 70;
-        scene.add(particles);
-
-
+        
         clock = new THREE.Clock();
 
         animate();
@@ -159,11 +138,6 @@ scene.add( light );
 
       function animate() {
         var elapsedSeconds = clock.getElapsedTime(),
-            particleRotationDirection = particleRotationDeg <= 180 ? -1 : 1;
-
-        particles.rotation.y = elapsedSeconds * particleRotationSpeed * particleRotationDirection;
-        particles.rotation.x = elapsedSeconds * particleRotationSpeed * particleRotationDirection;
-
         requestAnimationFrame(animate);
 
         update(clock.getDelta());
