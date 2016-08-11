@@ -99,12 +99,23 @@
         floorTexture.repeat = new THREE.Vector2(50, 50);
         floorTexture.anisotropy = renderer.getMaxAnisotropy();
 
+        var wallTexture = THREE.ImageUtils.loadTexture('textures/texture.jpg');
+        wallTexture.anisotropy = renderer.getMaxAnisotropy();
+
         var floorMaterial = new THREE.MeshPhongMaterial({
           color: 0xffffff,
           specular: 0xffffff,
           shininess: 20,
           shading: THREE.FlatShading,
           map: floorTexture
+        });
+
+         var wallMaterial = new THREE.MeshPhongMaterial({
+          color: 0xD60000,
+          specular: 0xD60000,
+          shininess: 20,
+          shading: THREE.FlatShading,
+          map: wallTexture
         });
 
         var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
@@ -115,6 +126,7 @@
 
         var wall = new THREE.Mesg(geometry, floorMaterial);
         scene.add(wall);
+        
         var particleTexture = THREE.ImageUtils.loadTexture('textures/particle.png'),
             spriteMaterial = new THREE.SpriteMaterial({
             map: particleTexture,
