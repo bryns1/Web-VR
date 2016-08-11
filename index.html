@@ -120,15 +120,12 @@
 
         var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
 
-        var l1 = new THREE.ImageLoader();
-        l1.setCrossOrigin('Anonymous');
-
-
         var floor = new THREE.Mesh(geometry, floorMaterial);
         floor.rotation.x = -Math.PI / 2;
         scene.add(floor);
 
         var wall = new THREE.Mesh(geometry, wallMaterial);
+        wall.position.x = 20;
         scene.add(wall);
 
         var particleTexture = THREE.ImageUtils.loadTexture('textures/particle.png'),
