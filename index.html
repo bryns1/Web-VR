@@ -55,7 +55,7 @@
         camera.position.set(0, 15, 0);
         scene.add(camera);
 
-        renderer = new THREE.WebGLRenderer();
+        renderer = new THREE.WebGLRenderer({ alpha: true });
         element = renderer.domElement;
         container = document.getElementById('webglviewer');
         container.appendChild(element);
