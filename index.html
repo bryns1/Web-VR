@@ -99,9 +99,11 @@
         floorTexture.wrapT = THREE.RepeatWrapping;
         floorTexture.repeat = new THREE.Vector2(1167, 778);*/
         floorTexture.anisotropy = renderer.getMaxAnisotropy();
+        floorTexture.minFilter = THREE.LinearFilter
 
         var wallTexture = THREE.ImageUtils.loadTexture('textures/texture.jpg');
         wallTexture.anisotropy = renderer.getMaxAnisotropy();
+        wallTexture.minFilter = THREE.LinearFilter
 
         var floorMaterial = new THREE.MeshPhongMaterial({
           color: 0xffffff,
