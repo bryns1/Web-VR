@@ -94,14 +94,17 @@
         lightScene.position.set(0, 5, 0);
         scene.add(lightScene);
 
-        var floorTexture = THREE.ImageUtils.loadTexture('textures/wood.jpg');
-        /*floorTexture.wrapS = THREE.RepeatWrapping;
-        floorTexture.wrapT = THREE.RepeatWrapping;
+        var floorTexture = THREE.ImageUtils.loadTexture('textures/wood.jpg', {}, function() {
+            renderer.render(scene);
+          });
+        /*floorTexture.wrapS = THREE.RepeatWrapping        floorTexture.wrapT = THREE.RepeatWrapping;
         floorTexture.repeat = new THREE.Vector2(1167, 778);*/
         floorTexture.anisotropy = renderer.getMaxAnisotropy();
         floorTexture.minFilter = THREE.LinearFilter
 
-        var wallTexture = THREE.ImageUtils.loadTexture('textures/texture.jpg');
+        var wallTexture = THREE.ImageUtils.loadTexture('textures/texture.jpg', {}, function() {
+            renderer.render(scene);
+          });
         wallTexture.anisotropy = renderer.getMaxAnisotropy();
         wallTexture.minFilter = THREE.LinearFilter
 
