@@ -89,8 +89,7 @@
         window.addEventListener('deviceorientation', setOrientationControls, true);
 
         // Lighting
-
-        var floorTexture = THREE.ImageUtils.loadTexture('textures/wood.jpg', {}, function(){
+        var floorTexture = THREE.ImageUtils.loadTexture('http://i.imgur.com/nqBUzxi.png', {}, function(){
       renderer.render(scene,camera);
 });
         /*floorTexture.wrapS = THREE.RepeatWrapping;
@@ -99,7 +98,7 @@
         floorTexture.anisotropy = renderer.getMaxAnisotropy();
         floorTexture.minFilter = THREE.LinearFilter
 
-        var wallTexture = THREE.ImageUtils.loadTexture('textures/texture.jpg', {} , function(){
+        var wallTexture = THREE.ImageUtils.loadTexture('http://i.imgur.com/nqBUzxi.png', {} , function(){
       renderer.render(scene,camera);
 });
         wallTexture.anisotropy = renderer.getMaxAnisotropy();
