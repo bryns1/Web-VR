@@ -119,12 +119,13 @@
         });
 
         var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
+        var wallGeometry = new THREE.PlaneBufferGeometry(50, 50);
 
         var floor = new THREE.Mesh(geometry, floorMaterial);
         floor.rotation.x = -Math.PI / 2;
         scene.add(floor);
 
-        var wall = new THREE.Mesh(geometry, wallMaterial);
+        var wall = new THREE.Mesh(wallGeometry, wallMaterial);
         wall.position.x = 100;
         scene.add(wall);
 
