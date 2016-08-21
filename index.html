@@ -90,10 +90,6 @@
 
         // Lighting
 
-        var lightScene = new THREE.PointLight(0x999999, 2, 100);
-        lightScene.position.set(0, 5, 0);
-        scene.add(lightScene);
-
         var floorTexture = THREE.ImageUtils.loadTexture('textures/wood.jpg', {}, function(){
       renderer.render(scene,camera);
 });
