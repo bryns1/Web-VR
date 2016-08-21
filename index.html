@@ -128,7 +128,7 @@
 
         var wall = new THREE.Mesh(geometry, wallMaterial);
         wall.position.z = 1000;
-        wall.position.x = 1000;
+        wall.rotation.x = Math.PI/2;
         scene.add(wall);
 
             var light = new THREE.AmbientLight( 0x404040 ); // soft white light
