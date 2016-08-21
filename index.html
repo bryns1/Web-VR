@@ -103,7 +103,7 @@
         floorTexture.anisotropy = renderer.getMaxAnisotropy();
         floorTexture.minFilter = THREE.LinearFilter
 
-        var wallTexture = THREE.ImageUtils.loadTexture('textures/texture.jpg', {}, function(){
+        var wallTexture = THREE.ImageUtils.loadTexture('textures/texture.jpg', {} , function(){
       renderer.render(scene,camera);
 });
         wallTexture.anisotropy = renderer.getMaxAnisotropy();
