@@ -86,6 +86,14 @@ var scene,
         var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
         var wallGeometry = new THREE.PlaneBufferGeometry(1920, 1080);
 
+        var sphereGeo = new THREE.SphereGeometry( 500, 60, 40 );
+        sphereGeo.scale( - 1, 1, 1 );
+        var sphereMaterial = new THREE.MeshBasicMaterial( {
+          map: new THREE.TextureLoader().load( 'textures/spheremap.jpg' )
+        } );
+        pano = new THREE.Mesh( sphereGeo, sphereMaterial );
+        scene.add( pano );
+
         var floor = new THREE.Mesh(geometry, floorMaterial);
         floor.rotation.x = -Math.PI / 2;
         scene.add(floor);
