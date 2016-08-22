@@ -75,15 +75,11 @@ var scene,
         wallTexture.minFilter = THREE.LinearFilter
 
         var floorMaterial = new THREE.MeshPhongMaterial({
-          color: 0xffffff,
           specular: 0xffffff,
-          shininess: 20,
-          shading: THREE.FlatShading,
-          map: floorTexture
         });
 
          var wallMaterial = new THREE.MeshPhongMaterial({
-          shininess: 20,
+          specular: 0xffffff,
           map: floorTexture
         });
 
