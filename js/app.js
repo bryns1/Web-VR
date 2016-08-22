@@ -88,11 +88,10 @@ var scene,
 
         var sphereGeo = new THREE.SphereGeometry( 500, 60, 40 );
         sphereGeo.scale( - 1, 1, 1 );
-        var sphereMap = new THREE.TextureLoader().load( './textures/spheremap.jpg' );
         var sphereMaterial = new THREE.MeshBasicMaterial( {
-          map: sphereMap,
+          map: new THREE.TextureLoader().load( './textures/spheremap.jpg' ),
         } );
-        pano = new THREE.Mesh( sphereGeo, sphereM aterial );
+        var pano = new THREE.Mesh( sphereGeo, sphereMaterial );
         scene.add( pano );
 
         var floor = new THREE.Mesh(geometry, floorMaterial);
