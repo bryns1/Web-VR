@@ -91,7 +91,7 @@ var scene,
           map: new THREE.TextureLoader().load( './textures/spheremap.jpg' ),
         } );
         var pano = new THREE.Mesh( sphereGeo, sphereMaterial );
-        pano.material.side = THREE.DoubleSide;
+        pano.material.side = THREE.BackSide;
         scene.add( pano );
 
         var floor = new THREE.Mesh(geometry, floorMaterial);
