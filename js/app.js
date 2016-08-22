@@ -110,6 +110,7 @@ scene.add( light );
       function animate() {
         var elapsedSeconds = clock.getElapsedTime();
         wall.rotation.y += 0.01;
+        console.log(wall.rotation.y)
         requestAnimationFrame(animate);
 
         update(clock.getDelta());
