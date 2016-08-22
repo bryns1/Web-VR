@@ -89,7 +89,7 @@ var scene,
         });
 
         var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
-        var wallGeometry = new THREE.PlaneBufferGeometry(100, 100);
+        var wallGeometry = new THREE.PlaneBufferGeometry(192, 108);
 
         var floor = new THREE.Mesh(geometry, floorMaterial);
         floor.rotation.x = -Math.PI / 2;
@@ -97,7 +97,7 @@ var scene,
 
         wall = new THREE.Mesh(wallGeometry, wallMaterial);
         wall.position.x = 300;
-        wall.rotation.y = 10;
+        wall.rotation.y = -Math.PI / 2;
         scene.add(wall);
 
             var light = new THREE.AmbientLight( 0x404040 ); // soft white light
