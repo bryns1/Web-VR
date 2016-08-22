@@ -94,9 +94,9 @@ var scene,
         pano.material.side = THREE.BackSide;
         scene.add( pano );
 
-        var floor = new THREE.Mesh(geometry, floorMaterial);
+        /*var floor = new THREE.Mesh(geometry, floorMaterial);
         floor.rotation.x = -Math.PI / 2;
-        scene.add(floor);
+        scene.add(floor);*/
 
         wall = new THREE.Mesh(wallGeometry, wallMaterial);
         wall.position.x = 600;
