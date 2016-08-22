@@ -86,6 +86,7 @@ var scene,
           color: 0xD60000,
           specular: 0xD60000,
           shininess: 20,
+          map: floorTexture
         });
 
         var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
@@ -96,7 +97,7 @@ var scene,
         scene.add(floor);
 
         wall = new THREE.Mesh(wallGeometry, wallMaterial);
-        wall.position.x = 300;
+        wall.position.x = 400;
         wall.rotation.y = -Math.PI / 2;
         scene.add(wall);
 
