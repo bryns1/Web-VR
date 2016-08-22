@@ -84,7 +84,6 @@ var scene,
 
          var wallMaterial = new THREE.MeshPhongMaterial({
           color: 0xD60000,
-          specular: 0xD60000,
           shininess: 20,
           map: floorTexture
         });
