@@ -97,6 +97,7 @@ var scene,
 
         wall = new THREE.Mesh(wallGeometry, wallMaterial);
         wall.position.x = 300;
+        wall.rotation.y = 10;
         scene.add(wall);
 
             var light = new THREE.AmbientLight( 0x404040 ); // soft white light
@@ -109,8 +110,8 @@ scene.add( light );
 
       function animate() {
         var elapsedSeconds = clock.getElapsedTime();
-        wall.rotation.y += 0.01;
-        console.log(wall.rotation.y)
+        // wall.rotation.y += 0.01;
+        // console.log(wall.rotation.y)
         requestAnimationFrame(animate);
 
         update(clock.getDelta());
