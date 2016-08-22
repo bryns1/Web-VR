@@ -87,11 +87,11 @@ var scene,
         var wallGeometry = new THREE.PlaneBufferGeometry(1920, 1080);
 
         var sphereGeo = new THREE.SphereGeometry( 500, 60, 40 );
-        sphereGeo.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
         var sphereMaterial = new THREE.MeshBasicMaterial( {
           map: new THREE.TextureLoader().load( './textures/spheremap.jpg' ),
         } );
         var pano = new THREE.Mesh( sphereGeo, sphereMaterial );
+        pano.material.side = THREE.DoubleSide;
         scene.add( pano );
 
         var floor = new THREE.Mesh(geometry, floorMaterial);
