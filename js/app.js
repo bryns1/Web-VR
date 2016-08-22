@@ -6,6 +6,7 @@ var scene,
           effect,
           controls,
           clock,
+          wall,
 
           // Particles
           particles = new THREE.Object3D(),
@@ -94,7 +95,7 @@ var scene,
         floor.rotation.x = -Math.PI / 2;
         scene.add(floor);
 
-        var wall = new THREE.Mesh(wallGeometry, wallMaterial);
+        wall = new THREE.Mesh(wallGeometry, wallMaterial);
         wall.position.x = 300;
         scene.add(wall);
 
