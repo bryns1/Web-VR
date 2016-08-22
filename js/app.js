@@ -89,7 +89,7 @@ var scene,
         });
 
         var geometry = new THREE.PlaneBufferGeometry(1000, 1000);
-        var wallGeometry = new THREE.PlaneBufferGeometry(192, 108);
+        var wallGeometry = new THREE.PlaneBufferGeometry(1920, 1080);
 
         var floor = new THREE.Mesh(geometry, floorMaterial);
         floor.rotation.x = -Math.PI / 2;
