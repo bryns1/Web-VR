@@ -83,7 +83,6 @@ var scene,
         });
 
          var wallMaterial = new THREE.MeshPhongMaterial({
-          color: 0xD60000,
           shininess: 20,
           map: floorTexture
         });
@@ -96,7 +95,7 @@ var scene,
         scene.add(floor);
 
         wall = new THREE.Mesh(wallGeometry, wallMaterial);
-        wall.position.x = 400;
+        wall.position.x = 600;
         wall.rotation.y = -Math.PI / 2;
         scene.add(wall);
 
