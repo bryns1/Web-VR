@@ -12,7 +12,12 @@ function errorLog(error){
 gulp.task('image', function(){
 	gulp.src('pano/*.jpg')
 		.pipe(imagemin())
-		.pipe(gulp.dest('pano'));
+		.pipe(gulp.dest('photos'))
+		.on("error", error);
+	gulp.src('photos/*.jpg')
+		.pipe(imagemin())
+		.pipe(gulp.dest('photos'))
+		.on("error", errorLog);
 });
 
 gulp.task('styles', function(){

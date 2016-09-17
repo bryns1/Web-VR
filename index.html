@@ -4,70 +4,29 @@
     <title>Connecting up Google Cardboard to web APIs</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <style>
-      body {
-        margin: 0px;
-        overflow: hidden;
-        background-color: white;
-      }
-      #webglviewer {
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      #debug{
-        color: white;
-        z-index: 999;
-        position: absolute;
-      }
-      .aim{
-        position: absolute;
-        width: 10px;
-        height:10px;
-        border-radius: 50%;
-        background: red;
-        top:50%;
-        left: 25%;
-      }
-      .aim2{
-        left: 75%;
-      }
-      #parent{
-        z-index: 10;
-        position: absolute;
-        background:red;
-        right: 0px;
-        top:0px;
-        height:20px;
-        width:360px;
-      }
-      #progress{
-        display: block;
-        background: black;
-        height:20px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css">
+    <link href="arrow.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div id="webglviewer"></div>
-    <div id="debug">
-      <p>X: <span id="x"></span>
-      Y: <span id="y"></span>
-      Z: <span id="z"></span></p>
+    <div class="loading">
+      <div class="loader"></div>
     </div>
-    <div class="aim"></div>
-    <div class="aim aim2"></div>
-    <div id="parent">
-      <span id="progress"></span>
+    <div class="welcome">
+      <img class="slide-photo firstphoto" src="./photos/pano-1.jpg">
+      <img class="slide-photo secondphoto" src="./photos/pano-1.jpg">
+      <div class="black-shade"></div>
+      <div class="shade-wrapper">
+        <h1>Inside</h1>
+      </div>
+      <div class="vr-wrapper"><img class="vr-icon" src="/photos/vr-icon-01.png"></div>
+      <div class="link-wrapper">
+        <a href="#" class="arrow">Enter</a>
+      </div>
     </div>
-    <script src="./js/three.js"></script>
-    <script src="./js/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-    <script src="./js/StereoEffect.js"></script>
-    <script src="./js/DeviceOrientationControls.js"></script>
-    <script src="./js/OrbitControls.js"></script>
+
+    <script src="./js/jquery.js"></script>    
     <script src="./js/app.js"></script>
   </body>
 </html>

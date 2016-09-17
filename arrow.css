@@ -1,0 +1,56 @@
+.arrow{
+	position:relative;
+	height:28px;
+	font-size:28px;
+	color:white;
+	display:inline-block;
+	transition:transform 0.3s;
+	line-height:28px;
+	text-decoration:none;
+}
+.arrow:before, .arrow:after{
+	content:'';
+	height:2px;
+	background:white;
+	display:block;
+	border-radius:2px;
+	position:absolute;
+	top:50%;
+	width:0px;
+	right:4px;
+	transition:transform 0.1s, right 0.3s, width 0.3s;
+}
+.arrow:hover{
+	transform:translateX(-5px);
+}
+.arrow:hover:before, .arrow:hover:after{
+	width:15px;
+	right: -12px;
+	animation-fill-mode:forwards;
+	animation-timing-function: ease-out;
+}
+
+.arrow:hover:before{
+	animation: growBefore 0.6s;
+	width:10px;transform:rotate(45deg) translateY(-5px);
+}
+.arrow:hover:after{
+	animation: growAfter 0.6s;
+	width:10px;transform:rotate(-45deg) translateY(5px);
+}
+
+.arrow:active:before, .arrow:active:after{
+ 	right: -20px;
+}
+
+@keyframes growAfter{
+	0%{width:0px;transform:rotate(0deg) translateY(0px);}
+	50%{width:10px;transform:rotate(-0deg) translateY(0px);}
+	100%{width:10px;transform:rotate(-45deg) translateY(5px);}
+}
+
+@keyframes growBefore{
+	0%{width:0px;transform:rotate(0deg) translateY(0px);}
+	50%{width:10px;transform:rotate(0deg) translateY(0px);}
+	100%{width:10px;transform:rotate(45deg) translateY(-5px);}
+}
