@@ -6,18 +6,23 @@ $(document).ready(function(){
       function(){
       })
   })
-  $('.arrow').addEventListener(click, fullscreen)
+  var arrow = document.getElementById("arrow");
+  arrow.addEventListener("click", fullscreen)
 })
 
 function fullscreen() {
-  var body = $('.fullscreenWrapper');
+  var body = document.getElementById('fullscreenWrapper');
   if (body.requestFullscreen) {
+    alert('body');
     body.requestFullscreen();
   } else if (body.msRequestFullscreen) {
+    alert('body1');
     body.msRequestFullscreen();
   } else if (body.mozRequestFullScreen) {
+    alert('body2');
     body.mozRequestFullScreen();
   } else if (body.webkitRequestFullscreen) {
+    alert('body3');
     body.webkitRequestFullscreen();
   }
 }
