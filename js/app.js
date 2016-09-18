@@ -10,7 +10,7 @@ $(document).ready(function(){
 })
 
 function fullscreen() {
-  var body = $('body');
+  var body = $('.fullscreenWrapper');
   if (body.requestFullscreen) {
     body.requestFullscreen();
   } else if (body.msRequestFullscreen) {
