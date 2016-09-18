@@ -68,20 +68,24 @@ body {
   position: absolute;
 }
 .firstphoto{
-  animation: slide 16s infinite linear;
+  animation: slide 60s infinite linear;
 }
 .secondphoto{
-  animation: slide-2 16s infinite linear;
+  animation: slide-2 60s infinite linear;
 }
 
 .black-shade{
-  background: rgba(0,0,0,0.66);
+  background: rgba(0,0,0,0.9);
   width: 100%;
   height: 100%;
   position: absolute;
   bottom: 0px;
   left: 0px;
+  animation: pulse 8s infinite linear alternate;
 }
+
+
+
 .shade-wrapper{
   position: relative;
   z-index: 1;
@@ -105,11 +109,7 @@ body {
 h1{
   font-family: didot;
   color:white;
-  font-size: 3em;
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%);
+  font-size: 25vw;
   margin:0 auto;
 }
 
@@ -123,7 +123,9 @@ h1{
 .link-wrapper{
   text-align: center;
   position: absolute;
-  bottom: 3em;
+  bottom: 0;
+  width: 100%;
+  padding: 4em;
   left:50%;
   transform: translateX(-50%);
 }
@@ -157,7 +159,14 @@ h1{
       -ms-flex-align: center;
           align-items: center;
 }
-
+h2{
+  font-family: didot;
+  color:white;
+  opacity: 0.1;
+  font-size: 25vw;
+  margin:0 auto;
+  margin-top: -1.1em;
+}
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -176,6 +185,18 @@ h1{
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse{
+  0%{
+    background:rgba(0,0,0,0.9);
+  }
+  50%{
+    background: rgba(0,0,0,0.8);
+  }
+  100%{
+    background: rgba(0,0,0,0.9);
   }
 }
 

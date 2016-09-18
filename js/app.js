@@ -4,7 +4,6 @@ $(document).ready(function(){
     fullscreen()
     loadScripts(["./js/three.js", "./js/StereoEffect.js", "./js/DeviceOrientationControls.js", "./js/OrbitControls.js", "./js/environment.js"], 
       function(){
-        $('.loading').fadeOut(600);
       })
 
   })

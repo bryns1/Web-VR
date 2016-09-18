@@ -73,7 +73,9 @@ var scene,
 
         var sphereGeo = new THREE.SphereGeometry( 500, 30, 40 );
         var sphereMaterial = new THREE.MeshBasicMaterial({
-          map: new THREE.TextureLoader().load( './pano/pano-1.jpg' )
+          map: new THREE.TextureLoader().load( './pano/pano-1.jpg', function(){
+            $('.loading').fadeOut(600);
+          })
         });
         pano = new THREE.Mesh( sphereGeo, sphereMaterial ); /*sometimes when you fight a */
         pano.material.side = THREE.BackSide;
