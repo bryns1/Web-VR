@@ -5,8 +5,8 @@ $(document).ready(function(){
     loadScripts(["./js/three.js", "./js/StereoEffect.js", "./js/DeviceOrientationControls.js", "./js/OrbitControls.js", "./js/environment.js"], 
       function(){
       })
-
   })
+  $('.arrow').addEventListener(click, fullscreen)
 })
 
 function fullscreen() {
