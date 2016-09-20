@@ -2,7 +2,7 @@ var gulp = 		require('gulp'),
 	gutil = 	require('gulp-util'),
 	uglify=		require('gulp-uglify'),
 	imagemin=	require('gulp-imagemin'),
-	prefix = 	require('gulp-autoprefixer');
+	autoprefixer = 	require('gulp-autoprefixer');
 
 function errorLog(error){
 	console.error.bind(error);
@@ -24,7 +24,7 @@ gulp.task('image', function(){
 gulp.task('styles', () =>
     gulp.src('*.css')
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            browsers: ['last 4 versions'],
             cascade: false
         }))
         .pipe(gulp.dest(''))
