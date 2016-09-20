@@ -162,5 +162,11 @@ webglviewer.addEventListener("mouseup", function(){
   clearTimeout(mouseTimeout);
 })
 
-
+$(window).resize(function(){
+  if(window.innerHeight > window.innerWidth){
+    $('.rotateWrapper').removeClass('fade');
+  }else{
+    $('.rotateWrapper').addClass('fade');
+  }
+})
 
