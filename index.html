@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Connecting up Google Cardboard to web APIs</title>
+    <title>Inside</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css">
@@ -26,15 +26,28 @@
       }]'></div>
       <div class="welcome">
               <h1>INSIDE</h1>
-              <img class="hero" src="./photos/white.png">
+              <img class="hero shadowed" src="./photos/white.png">
               <p>
-                It has been a year since we moved out of my home of 16 years. Inside the the house are the items that we own but never needed enough to bring over to our new house. The items are strewn about as if we left in a hurry. Which in a way we did, we were expecting the house to be knocked down and a new one built in its place, instead this house has come to represent a past life, when everything in the world was bigger and mysterious. 
+                It has been a year since we moved out of my home of 16 years. Left behind in the house are the items that we own but never needed enough to keep. The items are strewn about as if we left in a hurry. Which in a way we did, we were expecting the house to be knocked down and a new one built in its place, instead this house has come to represent a past life, when everything in the world was bigger and mysterious. 
               </p>
         <div class="link-wrapper">
           <a href="#" class="arrow" id="arrow">Enter</a>
         </div>
       </div>
     </div>
+
+    <svg height="0" xmlns="http://www.w3.org/2000/svg">
+    <filter id="drop-shadow">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+        <feOffset dx="12" dy="12" result="offsetblur"/>
+        <feFlood flood-color="rgba(0,0,0,0.5)"/>
+        <feComposite in2="offsetblur" operator="in"/>
+        <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+</svg>
 
     <script src="./js/jquery.js"></script>
     <script src="./js/owl/owl.carousel.min.js"></script>    

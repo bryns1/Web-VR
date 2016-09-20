@@ -47,6 +47,7 @@ h2{
   margin: 0 auto;
   display: inherit;
   margin-top: 50px;
+  width: 50%;
 }
 p{
   font-size: 18px;
@@ -59,14 +60,23 @@ p{
 .arrow{
   color: black;
   cursor:pointer;
+  pointer-events: initial;
+}
+
+.shadowed {
+    -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
+    filter: url(#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
 .link-wrapper{
   text-align: center;
   position: fixed;
   bottom: 0;
+  pointer-events: none;
   width: 100%;
-  padding: 4em;
+  padding: 3em;
   left:50%;
   transform: translateX(-50%);
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+50&0+0,0+0,1+50 */
