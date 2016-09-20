@@ -2,7 +2,7 @@ $(document).ready(function(){
   $(".arrow").click(function(){
     $(".welcome").fadeOut(600);
     fullscreen()
-    loadScripts(["./js/three.js", "./js/StereoEffect.js", "./js/DeviceOrientationControls.js", "./js/OrbitControls.js", "./js/environment.js", "./js/TweenLite.min.js"], 
+    loadScripts(["./js/three.js", "./js/StereoEffect.js", "./js/DeviceOrientationControls.js", "./js/OrbitControls.js", "./js/environment.js"], 
       function(){
       })
   })
