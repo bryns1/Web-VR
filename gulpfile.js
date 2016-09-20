@@ -1,7 +1,8 @@
-var gulp = 	require('gulp'),
-	gutil = require('gulp-util'),
-	uglify=	require('gulp-uglify'),
-	imagemin=require('gulp-imagemin');
+var gulp = 		require('gulp'),
+	gutil = 	require('gulp-util'),
+	uglify=		require('gulp-uglify'),
+	imagemin=	require('gulp-imagemin'),
+	prefix = 	require('gulp-autoprefixer');
 
 function errorLog(error){
 	console.error.bind(error);
@@ -20,10 +21,14 @@ gulp.task('image', function(){
 		.on("error", errorLog);
 });
 
-gulp.task('styles', function(){
-	console.log("Scripts");
-});
-
+gulp.task('styles', () =>
+    gulp.src('*.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest(''))
+);
 // Watches Files
 
 gulp.task('watch', function(){
