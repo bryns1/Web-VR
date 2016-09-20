@@ -15,7 +15,8 @@ var scene,
     panoSrc,
     panoImg = [],
     panoIter = -1,
-    mouseTimeout;
+    mouseTimeout,
+    rotateTimer;
 
 
 init();
@@ -165,8 +166,13 @@ webglviewer.addEventListener("mouseup", function(){
 $(window).resize(function(){
   if(window.innerHeight > window.innerWidth){
     $('.rotateWrapper').removeClass('fade');
+    clearTimeout(rotateTimer);
+    $('.rotateWrapper').removeClass('noDisplay');
   }else{
     $('.rotateWrapper').addClass('fade');
+    rotateTimer = setTimeout(function(){
+      $('.rotateWrapper').addClass('noDisplay');
+    }, 600)
   }
 })
 
