@@ -1,14 +1,3 @@
-@font-face{
-  font-family: 'didot';
-  src:url(font/Didot-Bold.ttf);
-}
-
-@font-face{
-  font-family: 'roboto';
-  src:url(font/Roboto-Light.ttf);
-}
-
-
 body {
   margin: 0px;
   overflow: hidden;
@@ -20,115 +9,75 @@ body {
   position: absolute;
   right: 0;
   top: 0;
+  transition: opacity 0.3s;
 }
-#debug{
-  color: white;
-  z-index: 999;
-  position: absolute;
-}
-.aim{
-  position: absolute;
-  width: 10px;
-  height:10px;
-  border-radius: 50%;
-  background: red;
-  top:50%;
-  left: 25%;
-}
-.aim2{
-  left: 75%;
-}
-#parent{
-  z-index: 10;
-  position: absolute;
-  background:red;
-  right: 0px;
-  top:0px;
-  height:20px;
-  width:360px;
-}
-#progress{
-  display: block;
-  background: black;
-  height:20px;
-}
+
 .welcome{
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0px;
   top:0px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: white;
   transition: opacity 1s;
   transition-delay: 0.7s;
 }
-.slide-photo{
-  height: 100%;
-  width: auto;
-  position: absolute;
-}
-.firstphoto{
-  animation: slide 60s infinite linear;
-}
-.secondphoto{
-  animation: slide-2 60s infinite linear;
-}
-
-.black-shade{
-  background: rgba(0,0,0,0.9);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  animation: pulse 8s infinite linear alternate;
-}
-
-
-
-.shade-wrapper{
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  height: 33%;
-}
-.vr-wrapper{
-  height: 33%;
-  position: relative;
-  text-align: center;
-}
-.vr-icon{
-  width: 120px;
-  height: auto;
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 h1{
-  font-family: didot;
-  color:white;
+  font-family: helvetica;
   font-size: 25vw;
   margin:0 auto;
+  text-align: center;
+  width: 100%;
 }
 
+h2{
+  font-family: helvetica;
+  width: 100%;
+  opacity: 0.1;
+  font-size: 25vw;
+  margin:0 auto;
+  margin-top: -1.1em;
+  text-align: center;
+}
+
+.hero{
+  margin: 0 auto;
+  display: inherit;
+  margin-top: 50px;
+}
+p{
+  font-size: 18px;
+  font-family: helvetica;
+  width: 80%;
+  margin: 3em auto 150px auto;
+  line-height: 1.5;
+  text-align: center;
+}
 .arrow{
-  font-family: roboto;
-  display: inline-block;
+  color: black;
+  cursor:pointer;
 }
-.invisible{
-  opacity: 0;
-}
+
 .link-wrapper{
   text-align: center;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   padding: 4em;
   left:50%;
   transform: translateX(-50%);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+50&0+0,0+0,1+50 */
+background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
 }
+
+
 
 .loader {
   border-radius: 50%;
@@ -138,6 +87,10 @@ h1{
   border-top-color: white;
   -webkit-animation: spin 1s infinite linear;
           animation: spin 1s infinite linear;
+}
+
+.fade{
+  opacity: 0;
 }
 
 .loading{
@@ -159,14 +112,7 @@ h1{
       -ms-flex-align: center;
           align-items: center;
 }
-h2{
-  font-family: didot;
-  color:white;
-  opacity: 0.1;
-  font-size: 25vw;
-  margin:0 auto;
-  margin-top: -1.1em;
-}
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -186,26 +132,4 @@ h2{
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
-}
-
-@keyframes pulse{
-  0%{
-    background:rgba(0,0,0,0.9);
-  }
-  50%{
-    background: rgba(0,0,0,0.8);
-  }
-  100%{
-    background: rgba(0,0,0,0.9);
-  }
-}
-
-@keyframes slide{
-  from{transform:translate3d(0%, 0, 0);}
-  to{transform:translate3d(-100%, 0, 0);}
-}
-
-@keyframes slide-2{
-  from{transform:translate3d(100%, 0, 0);}
-  to{transform:translate3d(0%, 0, 0);}
 }

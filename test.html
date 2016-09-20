@@ -4,11 +4,53 @@
     <title>Connecting up Google Cardboard to web APIs</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    
-    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css">
+    <link href="arrow.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./js/owl/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="./js/owl/owl.theme.default.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-  
+  <div class="fullscreenWrapper" id="fullscreenWrapper">
+  <div class="loading">
+        <div class="loader"></div>
+      </div>
+      <div id="webglviewer" class="fade" data-pano='[{
+      "src":[
+      "./pano/pano-1.jpg",
+      "./pano/pano-2.jpg",
+      "./pano/pano-3.jpg",
+      "./pano/pano-4.jpg",
+      "./pano/pano-5.jpg"
+      ]
+      }]'></div>
+      <div class="welcome">
+        <img class="slide-photo firstphoto" src="./photos/pano-1.jpg">
+        <img class="slide-photo secondphoto" src="./photos/pano-1.jpg">
+        <div class="black-shade"></div>
+          <div class="home">
+            <div class="shade-wrapper">
+              <h1>INSIDE</h1>
+              <h2>INSIDE</h2>
+              <h2>INSIDE</h2>
+              <h2>INSIDE</h2>
+              <h2>INSIDE</h2>
+              <h2>INSIDE</h2>
+              <h2>INSIDE</h2>
+              <h2>INSIDE</h2>
+            </div>
+          </div>
+          <div class="about">
+             
+          </div>
+        <div class="link-wrapper">
+          <a href="#" class="arrow" id="arrow">Enter</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/owl/owl.carousel.min.js"></script>    
+    <script src="./js/app.js"></script>
   </body>
 </html>

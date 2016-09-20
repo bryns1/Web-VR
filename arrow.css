@@ -11,7 +11,7 @@
 .arrow:before, .arrow:after{
 	content:'';
 	height:2px;
-	background:white;
+	background:black;
 	display:block;
 	border-radius:2px;
 	position:absolute;

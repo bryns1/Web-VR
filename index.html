@@ -6,35 +6,38 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css">
     <link href="arrow.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./js/owl/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="./js/owl/owl.theme.default.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
   <div class="fullscreenWrapper" id="fullscreenWrapper">
-    <div id="webglviewer"></div>
-    <div class="loading">
-      <div class="loader"></div>
-    </div>
-    <div class="welcome">
-      <img class="slide-photo firstphoto" src="./photos/pano-1.jpg">
-      <img class="slide-photo secondphoto" src="./photos/pano-1.jpg">
-      <div class="black-shade"></div>
-      <div class="shade-wrapper">
-        <h1>INSIDE</h1>
-        <h2>INSIDE</h2>
-        <h2>INSIDE</h2>
-        <h2>INSIDE</h2>
-        <h2>INSIDE</h2>
-        <h2>INSIDE</h2>
-        <h2>INSIDE</h2>
-        <h2>INSIDE</h2>
+  <div class="loading">
+        <div class="loader"></div>
       </div>
-      <div class="link-wrapper">
-        <a href="#" class="arrow" id="arrow">Enter</a>
+      <div id="webglviewer" class="fade" data-pano='[{
+      "src":[
+      "./pano/pano-1.jpg",
+      "./pano/pano-2.jpg",
+      "./pano/pano-3.jpg",
+      "./pano/pano-4.jpg",
+      "./pano/pano-5.jpg"
+      ]
+      }]'></div>
+      <div class="welcome">
+              <h1>INSIDE</h1>
+              <img class="hero" src="./photos/white.png">
+              <p>
+                It has been a year since we moved out of my home of 16 years. Inside the the house are the items that we own but never needed enough to bring over to our new house. The items are strewn about as if we left in a hurry. Which in a way we did, we were expecting the house to be knocked down and a new one built in its place, instead this house has come to represent a past life, when everything in the world was bigger and mysterious. 
+              </p>
+        <div class="link-wrapper">
+          <a href="#" class="arrow" id="arrow">Enter</a>
+        </div>
       </div>
-    </div>
     </div>
 
-    <script src="./js/jquery.js"></script>    
+    <script src="./js/jquery.js"></script>
+    <script src="./js/owl/owl.carousel.min.js"></script>    
     <script src="./js/app.js"></script>
   </body>
 </html>

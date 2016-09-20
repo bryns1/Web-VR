@@ -2,7 +2,7 @@ $(document).ready(function(){
   $(".arrow").click(function(){
     $(".welcome").fadeOut(600);
     fullscreen()
-    loadScripts(["./js/three.js", "./js/StereoEffect.js", "./js/DeviceOrientationControls.js", "./js/OrbitControls.js", "./js/environment.js"], 
+    loadScripts(["./js/three.js", "./js/StereoEffect.js", "./js/DeviceOrientationControls.js", "./js/OrbitControls.js", "./js/environment.js", "./js/TweenLite.min.js"], 
       function(){
       })
   })
@@ -10,19 +10,20 @@ $(document).ready(function(){
   arrow.addEventListener("click", fullscreen)
 })
 
+var mouse;
+document.onmousemove = function(e){
+  mouse = {"x":e.pageX, "y":e.pageY};
+}
+
 function fullscreen() {
   var body = document.getElementById('fullscreenWrapper');
   if (body.requestFullscreen) {
-    alert('body');
     body.requestFullscreen();
   } else if (body.msRequestFullscreen) {
-    alert('body1');
     body.msRequestFullscreen();
   } else if (body.mozRequestFullScreen) {
-    alert('body2');
     body.mozRequestFullScreen();
   } else if (body.webkitRequestFullscreen) {
-    alert('body3');
     body.webkitRequestFullscreen();
   }
 }
