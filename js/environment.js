@@ -130,6 +130,7 @@ function getPhoto(){
   console.log("first" + panoIter)
   return panoImg[panoLong];
   }else{
+    $('.loading').addClass('noDisplay')
     panoIter = panoIter + 1;
     if (panoIter > panoSrc.length-1){
       panoIter = 0;

@@ -110,14 +110,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   animation: spin 1s infinite linear;
 }
 
-.fade{
-  opacity: 0;
-}
-
-.noDisplay{
-  display: none;
-}
-
 .limiter{
   max-width: 360px;
   position: relative;
@@ -181,4 +173,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.fade{
+  opacity: 0;
+}
+
+.noDisplay{
+  display: none;
 }
