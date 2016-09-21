@@ -70,6 +70,8 @@ function init() {
   pano.material.side = THREE.BackSide;
   scene.add( pano );
 
+  rotateWarn()
+  
   clock = new THREE.Clock();
 
   animate();
@@ -163,7 +165,7 @@ webglviewer.addEventListener("mouseup", function(){
   clearTimeout(mouseTimeout);
 })
 
-$(window).resize(function(){
+function rotateWarn(){
   if(window.innerHeight > window.innerWidth){
     $('.rotateWrapper').removeClass('fade');
     clearTimeout(rotateTimer);
@@ -174,5 +176,7 @@ $(window).resize(function(){
       $('.rotateWrapper').addClass('noDisplay');
     }, 600)
   }
-})
+}
+
+$(window).resize(rotateWarn)
 

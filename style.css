@@ -47,20 +47,31 @@ h2{
   margin: 0 auto;
   display: inherit;
   margin-top: 50px;
-  width: 50%;
+  width: 60%;
 }
-p{
+ul{
+  padding: 0;
+  text-align: justify;
+  text-decoration: none;
+}
+.instruction{
+  font-size:1.5em;
+  margin-top: 1em;
+}
+.para{
   font-size: 18px;
   font-family: helvetica;
   width: 80%;
-  margin: 3em auto 150px auto;
+  margin: 4em auto 150px auto;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
+
 }
 .arrow{
   color: black;
   cursor:pointer;
   pointer-events: initial;
+  font-weight: bold;
 }
 
 .shadowed {
@@ -105,6 +116,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 .noDisplay{
   display: none;
+}
+
+.limiter{
+  max-width: 360px;
+  position: relative;
+  margin: 0 auto;
 }
 
 .rotateWrapper{
