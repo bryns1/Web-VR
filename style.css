@@ -29,7 +29,6 @@ body {
   left: -5%;
 }
 .summary .shadowed{
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
 }
 
 #justify {
@@ -116,10 +115,14 @@ ul{
   padding-left: 40px;
 }
 .summary h1{
-  position: absolute;
-  top:30px;
-  font-size:24.5vw;
-  color: white;
+      position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 10px;
+    font-size: 24vw;
+    color: white;
 }
 .summary .hero{
   margin-top: 18px;
