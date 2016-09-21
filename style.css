@@ -24,6 +24,47 @@ body {
   transition: opacity 1s;
   transition-delay: 0.7s;
 }
+.owl-carousel{
+  margin: 0 auto;
+  width: 110%;
+  left: -5%;
+}
+.summary .shadowed{
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+}
+
+#justify {
+  width: 300px;
+  letter-spacing: 0.5em;
+}
+
+.lazyload{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+figure{
+  margin: 0;
+  width: 110%;
+  text-align: center;
+  position: relative;
+  left: -5%;
+}
+
+figcaption{
+  padding: 1em;
+  font-size: 14px;
+  color: rgba(0,0,0,0.64);
+}
+
+figure .owl-carousel{
+  width: 100%;
+  left: 0;
+}
+
+.summary .hero{
+  width: 90%;
+}
 
 h1{
   font-family: helvetica;
@@ -31,16 +72,7 @@ h1{
   margin:0 auto;
   text-align: center;
   width: 100%;
-}
-
-h2{
-  font-family: helvetica;
-  width: 100%;
-  opacity: 0.1;
-  font-size: 25vw;
-  margin:0 auto;
-  margin-top: -1.1em;
-  text-align: center;
+  word-break: break-word;
 }
 
 .hero{
@@ -49,15 +81,59 @@ h2{
   margin-top: 50px;
   width: 60%;
 }
+
+a, a:visited, a:hover{
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+}
+
 ul{
   padding: 0;
   text-align: justify;
   text-decoration: none;
 }
+
+.footer-link{
+  text-align: center;
+  padding: 0.5em;
+  background: black;
+  color: white;
+  border-radius: 35px;
+  margin-top: 30px;
+}
+
+.button{
+  text-decoration: none;
+}
+
+.button:active{
+  top:2px;
+  position: relative;
+}
+
+.summary ul{
+  padding-left: 40px;
+}
+.summary h1{
+  position: absolute;
+  top:30px;
+  font-size:24vw;
+  color: white;
+}
+.summary .hero{
+  margin-top: 18px;
+  margin-bottom: 60px;
+}
 .instruction{
   font-size:1.5em;
   margin-top: 1em;
 }
+
+strong{
+  line-height: 2.5em;
+}
+
 .para{
   font-size: 18px;
   font-family: helvetica;
@@ -72,13 +148,6 @@ ul{
   cursor:pointer;
   pointer-events: initial;
   font-weight: bold;
-}
-
-.shadowed {
-    -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
-    filter: url(#drop-shadow);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
 .link-wrapper{

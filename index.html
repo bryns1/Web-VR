@@ -18,55 +18,42 @@
   </head>
   <body>
   <div class="fullscreenWrapper" id="fullscreenWrapper">
-  <div class="loading">
-        <div class="loader"></div>
-      </div>
-      <div id="webglviewer" class="fade" data-pano='[{
-      "src":[
-      "./pano/pano-1.jpg",
-      "./pano/pano-2.jpg",
-      "./pano/pano-3.jpg",
-      "./pano/pano-4.jpg",
-      "./pano/pano-5.jpg"
-      ]
-      }]'></div>
-      <div class="welcome">
+    <div class="loading">
+      <div class="loader"></div>
+    </div>
+    <div id="webglviewer" class="fade" data-pano='[{
+    "src":[
+    "./pano/pano-1.jpg",
+    "./pano/pano-2.jpg",
+    "./pano/pano-3.jpg",
+    "./pano/pano-4.jpg",
+    "./pano/pano-5.jpg"
+    ]
+    }]'></div>
+    <div class="welcome">
       <h1>INSIDE</h1>
-        <div class="limiter">
-          <img class="hero shadowed" src="./photos/white.png">
-          <div class="para">
-            <p><strong class="instruction">INSTRUCTIONS</strong><br></p>
-            <ul>
-              <li>Tap the enter button</li>
-              <li>Hold phone horizontally and slide into the viewer</li>
-              <li>Center the phone so that the line in the middle is unnoticable</li>
-              <li>Hold the button on the top right of the viewer to change photo</li>
-              <li>There are a total of 5 images</li>
-            </ul>
-          </div>
-          </div>
-        <div class="link-wrapper">
-          <a href="#" class="arrow" id="arrow">Enter</a>
+      <div class="limiter">
+        <img class="hero shadowed" src="./photos/white.png">
+        <div class="para">
+          <p><strong class="instruction">INSTRUCTIONS</strong><br></p>
+          <ul>
+            <li>Tap the enter button</li>
+            <li>Hold phone horizontally and slide into the viewer</li>
+            <li>Center the phone so that the line in the middle is unnoticable</li>
+            <li>Hold the button on the top right of the viewer to change photo</li>
+            <li>There are a total of 5 images</li>
+          </ul>
+          <a class="button" href="concept.html"><p class="footer-link">Concept behind artwork</p></a>
         </div>
       </div>
-      <div class="rotateWrapper fade">
-        <img src="./photos/rotatephone.gif" class="rotate">
+      <div class="link-wrapper">
+        <a href="#" class="arrow" id="arrow">Enter</a>
       </div>
     </div>
-
-
-    <svg height="0" xmlns="http://www.w3.org/2000/svg">
-    <filter id="drop-shadow">
-        <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
-        <feOffset dx="12" dy="12" result="offsetblur"/>
-        <feFlood flood-color="rgba(0,0,0,0.5)"/>
-        <feComposite in2="offsetblur" operator="in"/>
-        <feMerge>
-            <feMergeNode/>
-            <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-    </filter>
-</svg>
+    <div class="rotateWrapper fade">
+      <img src="./photos/rotatephone.gif" class="rotate">
+    </div>
+  </div>
 
     <script src="./js/jquery.js"></script>
     <script src="./js/app.js"></script>
