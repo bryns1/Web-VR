@@ -148,6 +148,7 @@ function changePhoto(){
 
 var webglviewer = document.getElementById("webglviewer");
 webglviewer.addEventListener("mousedown", function(){
+  fullscreen()
   var oldMouse = mouse;
   mouseTimeout = setTimeout(function(){
     var newMouse = mouse;
