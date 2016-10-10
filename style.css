@@ -456,6 +456,11 @@ body {
   width: 110%;
   left: -5%;
 }
+
+.owl-item{
+	min-height: 200px;
+}
+
 .summary .shadowed{
 }
 
