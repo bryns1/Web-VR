@@ -457,7 +457,7 @@ body {
   left: -5%;
 }
 
-.owl-item{
+.owl-carousel .owl-item{
 	min-height: 200px;
 }
 
