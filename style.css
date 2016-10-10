@@ -455,6 +455,7 @@ body {
   margin: 0 auto;
   width: 110%;
   left: -5%;
+  min-height: 100px;
 }
 
 .owl-carousel .owl-item{
